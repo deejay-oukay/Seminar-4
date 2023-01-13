@@ -11,10 +11,7 @@ int InputInt(string message)
 
 void PrintArray(int[] arr)
 {
-    Console.Write("[");
-    for (int i = 0; i < arr.Length; i++)
-        Console.Write((i > 0 ? ", ":"")+arr[i]);
-    Console.Write("]");
+    Console.WriteLine($"[{String.Join(", ",arr)}]");
 }
 
 int[] array = new int[8];
