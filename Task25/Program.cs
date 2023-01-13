@@ -8,21 +8,15 @@ int InputInt(string message)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-// Не уверен, что правильно понял, для чего здесь нужен цикл
-// Пусть в цикле do-while запрашиваются числа до тех пор, пока хотя бы одно из них не будет равно 0
-
-void Cicle()
+int MyPow(int number, int power)
 {
-    int a = 0, b = 0;
-
-    do
-    {
-        a = InputInt("Введите число A: ");
-        b = InputInt("Введите число B: ");
-        Console.WriteLine($"{a} в степени {b} = {Math.Pow(a,b)}");
-        Console.WriteLine("Повторим. Чтобы остановиться введите 0 для A или для B...");
-    }
-    while ((a != 0) && (b != 0));
+    int result = number;
+    for (int i = 1; i < power; i++)
+        result *= number;
+    return result;
 }
 
-Cicle();
+int a = InputInt("Введите число A: ");
+int b = InputInt("Введите число B: ");
+
+Console.WriteLine($"{a} в степени {b} = {MyPow(a,b)}");
