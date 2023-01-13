@@ -11,8 +11,13 @@ int InputInt(string message)
 
 int DigitsCount(int number)
 {
-    string str = Convert.ToString(number);
-    return str.Length;
+    int count = 0;
+    while (number > 0)
+    {
+        count++;
+        number /= 10;
+    }
+    return count;
 }
 
 Console.WriteLine($"Количество цифр: {DigitsCount(InputInt("Введите число: "))}");
